@@ -18,14 +18,19 @@ PROFILE = {
     "title": "Systems Engineer & Data Scientist",
     "tagline": "Engineering Management & Systems Engineering",
     "about": (
-        "I'm a Systems Engineer and data scientist graduating from The George Washington "
-        "University in August 2026 with a B.S. in Engineering Management & Systems "
-        "Engineering and a minor in Data Analytics for Decisions. "
-        "My work spans centralized data architecture, predictive modeling, embedded IoT "
-        "systems, geospatial analysis, and MBSE — always with an eye toward equity and "
-        "real-world impact. I am bilingual in English and Spanish, an IEEE published author, "
-        "and a Best Paper winner at the 2026 Andrew P. Sage Memorial Capstone Competition "
-        "for my work redesigning WMATA's transit safety data infrastructure."
+        "I'm a first-generation engineer from West Covina, California — and honestly, "
+        "I wouldn't have it any other way. Growing up, I was always the person asking "
+        "'but why does this system work like that?' Turns out, that's basically a "
+        "Systems Engineering degree waiting to happen. "
+        "I'm finishing my B.S. in Engineering Management & Systems Engineering at The "
+        "George Washington University (minor in Data Analytics for Decisions) and I've "
+        "spent the last two years redesigning transit safety data infrastructure for WMATA, "
+        "building IoT plant monitors, and mapping disaster vulnerability for FEMA — "
+        "all with the goal of making systems that actually work for people who need them most. "
+        "I'm bilingual in English and Spanish, an IEEE published author, and a Thrive Scholar. "
+        "When I'm not deep in a SysML diagram or debugging a Python model at midnight, "
+        "I'm probably tutoring students or figuring out how to make something more equitable. "
+        "Big on impact. Bigger on making sure the right communities feel it."
     ),
     "email": "gladysfong0@gmail.com",
     "linkedin": "https://www.linkedin.com/in/gladys-fong-3b330b28a/",
@@ -37,11 +42,13 @@ PHOTO_FILE = "gladys_photo.jpg"
 
 TYPING_WORDS = [
     "Systems Engineer",
-    "Data Scientist",
+    "Data Architect",
     "MBSE Practitioner",
-    "IoT Developer",
-    "GIS Analyst",
-    "Problem Solver",
+    "IoT Engineer",
+    "Geospatial Analyst",
+    "Predictive Modeler",
+    "Requirements Engineer",
+    "First-Gen Engineer",
 ]
 
 AWARDS = [
@@ -56,10 +63,6 @@ AWARDS = [
     {
         "title": "Honorable Mention",
         "body": "SIEDS UVA Systems Engineering Competition",
-    },
-    {
-        "title": "Best GWU SEAS Senior Design Award",
-        "body": "Systems Engineering Department",
     },
 ]
 
