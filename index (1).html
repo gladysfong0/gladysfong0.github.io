@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gladys Nicolle Fong — Systems Engineer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0D0D0D;
+      color: #F0F0F0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 1px solid #1e1e1e;
+      position: sticky; top: 0;
+      background: #0D0D0Dee;
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-weight: 800; font-size: 1.05rem;
+      background: linear-gradient(90deg, #FF6B35, #7B2FBE);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links a {
+      color: #888888; text-decoration: none;
+      margin-left: 1.8rem; font-size: 0.9rem; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #F0F0F0; }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 2.5rem 3rem;
+      max-width: 900px; margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: #00C2A8; margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      font-weight: 800; line-height: 1.05; margin-bottom: 1.4rem;
+    }
+    .grad {
+      background: linear-gradient(135deg, #FF6B35 0%, #7B2FBE 55%, #00C2A8 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.1rem; color: #888888;
+      max-width: 600px; margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* BUTTONS */
+    .cta-btn {
+      padding: 0.75rem 1.8rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.92rem;
+      text-decoration: none; display: inline-block; transition: all 0.2s;
+    }
+    .primary-btn { background: #FF6B35; color: #fff; }
+    .primary-btn:hover { background: #e55a26; transform: translateY(-2px); }
+    .secondary-btn {
+      background: transparent; border: 1.5px solid #7B2FBE; color: #7B2FBE;
+    }
+    .secondary-btn:hover { background: #7B2FBE22; transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section { max-width: 1060px; margin: 0 auto; padding: 5rem 2.5rem; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: #FF6B35; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800; margin-bottom: 2.8rem;
+    }
+    .divider { border: none; border-top: 1px solid #1e1e1e; margin: 0 2rem; }
+
+    /* AWARDS */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .award-card {
+      background: #161616;
+      border: 1px solid #F5C51833;
+      border-left: 4px solid #F5C518;
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.4rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .award-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .award-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .award-body { color: #888888; font-size: 0.85rem; line-height: 1.5; }
+
+    /* PROJECTS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.4rem;
+    }
+    .card {
+      background: #161616; border: 1px solid #242424;
+      border-radius: 14px; padding: 1.8rem;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { border-color: #FF6B3566; transform: translateY(-5px); }
+    .card-emoji { font-size: 2rem; margin-bottom: 0.8rem; }
+    .card-badge {
+      display: inline-block;
+      background: #F5C51818; border: 1px solid #F5C51855;
+      color: #F5C518; font-size: 0.75rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+      margin-bottom: 0.8rem; width: fit-content;
+    }
+    .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0.9rem; }
+    .desc { color: #888888; font-size: 0.88rem; flex: 1; margin-bottom: 1.1rem; line-height: 1.65; }
+    .card-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .btn-link {
+      font-size: 0.82rem; font-weight: 600; color: #FF6B35;
+      text-decoration: none; border: 1px solid #FF6B3555;
+      padding: 4px 13px; border-radius: 6px; transition: background 0.2s;
+    }
+    .btn-link:hover { background: #FF6B3522; }
+    .btn-demo { color: #00C2A8; border-color: #00C2A855; }
+    .btn-demo:hover { background: #00C2A822; }
+
+    /* SKILLS */
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .skill-chip {
+      background: #1E1E1E; border: 1px solid #2a2a2a;
+      color: #F0F0F0; padding: 6px 15px;
+      border-radius: 99px; font-size: 0.85rem;
+    }
+
+    /* ABOUT */
+    .about-box {
+      background: #161616; border: 1px solid #2a2a2a;
+      border-left: 4px solid #7B2FBE;
+      border-radius: 0 14px 14px 0;
+      padding: 2rem 2.2rem;
+      font-size: 1rem; color: #ccc; line-height: 1.85;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 2.5rem;
+      color: #888888; font-size: 0.83rem;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #00C2A8; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links a { margin-left: 1rem; font-size: 0.82rem; }
+      .hero { padding: 3.5rem 1.2rem 2rem; }
+      section { padding: 3.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Gladys Fong</span>
+  <div class="nav-links">
+    <a href="#awards">Awards</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="mailto:gladysfong0@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Systems Engineer · GWU Class of 2026</p>
+  <h1>
+    Systems that connect<br>
+    <span class="grad">data, design & impact.</span>
+  </h1>
+  <p class="hero-sub">GWU Engineering Management & Systems Engineering senior designing resilient, data-driven systems at the intersection of hardware, software, and people.</p>
+  <div class="hero-actions">
+    <a href="#projects" class="cta-btn primary-btn">View Projects</a>
+    <a href="Gladys_Fong_Resume.pdf" download class="cta-btn secondary-btn">Download Resume ↓</a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- AWARDS -->
+<section id="awards">
+  <p class="section-label">Recognition</p>
+  <h2 class="section-title">Awards & Publications</h2>
+  <div class="awards-grid">
+    
+    <div class="award-card">
+      <span class="award-icon">🏆</span>
+      <div>
+        <div class="award-title">Best Paper Winner</div>
+        <div class="award-body">Andrew P. Sage Memorial Capstone Competition (2026) — WMATA Safety Data Architecture & Forecasting</div>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <span class="award-icon">📄</span>
+      <div>
+        <div class="award-title">IEEE Published Author</div>
+        <div class="award-body">Published research on transit safety data architecture</div>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <span class="award-icon">🎖️</span>
+      <div>
+        <div class="award-title">Honorable Mention</div>
+        <div class="award-body">SIEDS UVA Systems Engineering Competition</div>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-title">Best GWU SEAS Senior Design Award</div>
+        <div class="award-body">Systems Engineering Department</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Work</p>
+  <h2 class="section-title">Engineering Projects</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <div class="card-emoji">🚇</div>
+      <div class="card-badge">🏆 Best Paper — Sage Capstone 2026</div>
+      <h3>WMATA Safety Data Architecture & Forecasting</h3>
+      <div class="tags"><span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Python</span> <span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Nonlinear Regression</span> <span style="background:#1a0035;color:#7B2FBE;border:1px solid #7B2FBE44;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Data Architecture</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">GIS</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">MBSE</span></div>
+      <p class="desc">Capstone fellowship with GWU × WMATA. Redesigned WMATA's siloed safety data into a centralized logical data architecture for cross-departmental incident analysis across rail and bus operations. Built a Python forecasting tool modeling seasonality and location-based incident patterns for predictive maintenance planning. Led weekly stakeholder meetings with WMATA safety engineers across a 4-person team.</p>
+      <div class="card-links"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🌱</div>
+      
+      <h3>IoT Plant Health Monitoring System</h3>
+      <div class="tags"><span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Raspberry Pi 4</span> <span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Machine Learning</span> <span style="background:#1a0035;color:#7B2FBE;border:1px solid #7B2FBE44;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">SysML</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Capella</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Python</span></div>
+      <p class="desc">Designed and deployed an embedded smart monitoring system with 4 environmental sensors, Raspberry Pi 4, and automated pump control to automate plant health tracking. Developed an ML-based plant health classification model and real-time dashboard. Modeled full system lifecycle using SysML and Capella for design traceability and verification.</p>
+      <div class="card-links"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🗺️</div>
+      
+      <h3>FEMA Equitable Disaster Resource Allocation Tool</h3>
+      <div class="tags"><span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Python</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">GIS</span> <span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Vulnerability Index</span> <span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Data Analytics</span></div>
+      <p class="desc">Built a Python tool normalizing socioeconomic, geographic, and infrastructure indicators into a Vulnerability Index to identify Houston-area communities most at risk of inadequate disaster response using Hurricane Harvey data. Produced geospatial heat maps and presented data-driven recommendations to FEMA Response leadership.</p>
+      <div class="card-links"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🛴</div>
+      
+      <h3>E-Scooter Infrastructure Requirements Analysis</h3>
+      <div class="tags"><span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">GIS</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Python</span> <span style="background:#1a0035;color:#7B2FBE;border:1px solid #7B2FBE44;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Requirements Engineering</span> <span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Urban Mobility</span></div>
+      <p class="desc">Conducted full requirements analysis for ADA-compliant e-scooter docking infrastructure in Foggy Bottom, DC, addressing last-mile transit gaps. Built GIS heat maps visualizing ridership demand and accessibility gaps; translated stakeholder-driven requirements into infrastructure specifications for urban mobility planning.</p>
+      <div class="card-links"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🐦</div>
+      
+      <h3>Mechanical Bird — Systems Design & Fabrication</h3>
+      <div class="tags"><span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">SOLIDWORKS</span> <span style="background:#003330;color:#00C2A8;border:1px solid #00C2A844;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">AutoCAD</span> <span style="background:#1a0035;color:#7B2FBE;border:1px solid #7B2FBE44;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">SysML</span> <span style="background:#3a1800;color:#FF6B35;border:1px solid #FF6B3544;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Machining</span></div>
+      <p class="desc">Designed and manufactured a mechanical bird with flapping wings and 360-degree head rotation using SOLIDWORKS, AutoCAD, and machining tools. Applied SysML decomposition and iterative design verification to validate functional requirements and ensure structural integrity at each fabrication stage.</p>
+      <div class="card-links"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Toolkit</p>
+  <h2 class="section-title">Skills & Tools</h2>
+  <div class="skills-wrap">
+    <span class="skill-chip">Systems Architecture</span>
+<span class="skill-chip">MBSE / SysML</span>
+<span class="skill-chip">Requirements Engineering</span>
+<span class="skill-chip">Fault Tree Analysis</span>
+<span class="skill-chip">Capella</span>
+<span class="skill-chip">Python (Pandas, NumPy, Scikit-learn, Matplotlib)</span>
+<span class="skill-chip">MATLAB</span>
+<span class="skill-chip">SQL</span>
+<span class="skill-chip">Control Systems</span>
+<span class="skill-chip">SOLIDWORKS / AutoCAD</span>
+<span class="skill-chip">Raspberry Pi 4</span>
+<span class="skill-chip">GIS / Geospatial Mapping</span>
+<span class="skill-chip">Tableau</span>
+<span class="skill-chip">Excel</span>
+<span class="skill-chip">OpenAI API</span>
+<span class="skill-chip">Machine Learning</span>
+<span class="skill-chip">Predictive Modeling</span>
+<span class="skill-chip">Data Architecture</span>
+<span class="skill-chip">AI Agent Development</span>
+<span class="skill-chip">Agile / Scrum</span>
+<span class="skill-chip">Risk Analysis</span>
+<span class="skill-chip">Stakeholder Engagement</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About</p>
+  <h2 class="section-title">Who I Am</h2>
+  <div class="about-box">I'm a Systems Engineer and data scientist graduating from The George Washington University in August 2026 with a B.S. in Engineering Management & Systems Engineering and a minor in Data Analytics for Decisions. My work spans centralized data architecture, predictive modeling, embedded IoT systems, geospatial analysis, and MBSE — always with an eye toward equity and real-world impact. I'm bilingual (English & Spanish), an IEEE published author, and a Best Paper winner at the 2026 Andrew P. Sage Memorial Capstone Competition for my work redesigning WMATA's transit safety data infrastructure.</div>
+  <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+    <a href="mailto:gladysfong0@gmail.com" class="cta-btn primary-btn">Get in Touch ✉</a>
+    <a href="https://www.linkedin.com/in/gladys-fong-3b330b28a/" target="_blank" class="cta-btn secondary-btn">LinkedIn ↗</a>
+    <a href="https://github.com/gladysfong0" target="_blank" class="cta-btn secondary-btn">GitHub ↗</a>
+  </div>
+</section>
+
+<footer>
+  <p>Built with Python · Hosted on GitHub Pages</p>
+  <p style="margin-top:0.4rem;">
+    <a href="mailto:gladysfong0@gmail.com">gladysfong0@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
