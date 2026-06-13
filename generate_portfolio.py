@@ -55,14 +55,20 @@ AWARDS = [
     {
         "title": "Best Paper Winner",
         "body": "Andrew P. Sage Memorial Capstone Competition (2026) — WMATA Safety Data Architecture & Forecasting",
+        "link": "",
+        "link_label": "",
     },
     {
         "title": "IEEE Published Author",
         "body": "Published research on transit safety data architecture",
+        "link": "https://ieeexplore.ieee.org/document/11540313",
+        "link_label": "Read the Paper",
     },
     {
         "title": "Honorable Mention",
         "body": "SIEDS UVA Systems Engineering Competition",
+        "link": "",
+        "link_label": "",
     },
 ]
 
@@ -201,12 +207,16 @@ def project_card(p):
     </div>"""
 
 def award_card(a):
+    link_html = ""
+    if a.get("link"):
+        link_html = f'<a href="{a["link"]}" target="_blank" class="award-link">{a["link_label"]} ↗</a>'
     return f"""
     <div class="award-card reveal">
       <div class="award-accent"></div>
       <div>
         <div class="award-title">{a["title"]}</div>
         <div class="award-body">{a["body"]}</div>
+        {link_html}
       </div>
     </div>"""
 
@@ -440,6 +450,13 @@ def build_html():
     }}
     .award-title {{ font-weight: 700; font-size: 0.92rem; margin-bottom: 0.3rem; color: {TEXT_MAIN}; }}
     .award-body {{ color: {TEXT_MUTED}; font-size: 0.83rem; line-height: 1.5; }}
+    .award-link {{
+      display: inline-block; margin-top: 0.5rem;
+      font-size: 0.8rem; font-weight: 600; color: {ROSE};
+      text-decoration: none; border-bottom: 1px solid {ROSE}44;
+      transition: color 0.2s, border-color 0.2s;
+    }}
+    .award-link:hover {{ color: {BLUSH}; border-color: {BLUSH}; }}
 
     /* ── PROJECT CARDS ── */
     .grid {{
